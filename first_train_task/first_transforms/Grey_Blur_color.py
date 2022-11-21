@@ -25,6 +25,13 @@ def median_blur( name, size):
     img_blur = cv2.medianBlur(img, size)
     cv2.imwrite( out_dir + f'MedianaBlur_{size}_'+ name, img_blur )
 
+def only_one_color ( name ):
+    imag = cv2.imread( cur_dir + name )
+    b, g, r = cv2.split(imag)
+    cv2.imwrite( out_dir + 'blue_ch_'+ name, b )
+    cv2.imwrite( out_dir + 'green_ch_'+ name, g )
+    cv2.imwrite( out_dir + 'red_ch_'+ name, r )
+
 
 name = 'Lenna.jpg'
 
@@ -32,3 +39,6 @@ get_and_save_grayscale_image( name )
 get_and_save_binarize_image ( name, 130 )
 gauss_blur( name, 11)
 median_blur( name, 11)
+gauss_blur( name, 5)
+median_blur( name, 5)
+only_one_color( name)
