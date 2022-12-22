@@ -1,7 +1,5 @@
 import numpy as np
 import cv2
-from matplotlib import pyplot as plt
-
 import pathlib
 
 cur_dir = str( pathlib.Path(__file__).parent.resolve() ) + '/'
